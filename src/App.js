@@ -35,10 +35,9 @@ function App() {
   //   console.log("logout");
   // }
 
-  
 
   return (
-  
+    
 
     <Routes  >  
       <Route exact path="/" element ={<Home/>} /> 

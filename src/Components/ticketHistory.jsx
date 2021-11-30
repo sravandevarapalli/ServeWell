@@ -1,6 +1,5 @@
 import React from "react";
-import NavBar from "./nav";
-import { useState } from 'react';
+import NavBar from "./nav"; 
 // import { useParams } from "react-router-dom";
 import Login from "./Login/login";
 

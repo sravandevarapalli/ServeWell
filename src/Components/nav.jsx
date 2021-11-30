@@ -1,5 +1,4 @@
-import React, { Component, useState } from 'react';
-import { Navigate} from "react-router-dom";
+import React from 'react'; 
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {

@@ -1,6 +1,4 @@
-import React from "react";
-import Ticket from "./ticket";
-import NavBar from "./nav";
+import React from "react"; 
 import "./tickets.css"
 import { Link } from 'react-router-dom';
 

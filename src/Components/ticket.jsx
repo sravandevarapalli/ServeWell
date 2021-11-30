@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import NavBar from './nav';
-//import {userNavigate} from 'react-router-dom';
-import AddorEditTicket from './addEditTicket';
-
+import React  from 'react'; 
 class Ticket  extends React.Component {
 
     state={

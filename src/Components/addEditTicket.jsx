@@ -1,10 +1,7 @@
 import React from "react";
-import NavBar from "./nav";
-import { useState } from 'react';
+import NavBar from "./nav"; 
 import { Link } from 'react-router-dom';
-import Login from "./Login/login";
-import {withRouter} from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
+import Login from "./Login/login"; 
 
 class AddorEditTicket extends React.Component {
 
@@ -31,10 +28,10 @@ class AddorEditTicket extends React.Component {
 
     componentDidMount() {
  
-        const isLoggedIn = localStorage.getItem("IsLoggedIn");
+        //const isLoggedIn = localStorage.getItem("IsLoggedIn");
         const email = localStorage.getItem("email");
-        const role = localStorage.getItem("role");
-        const user = localStorage.getItem("user");
+        //const role = localStorage.getItem("role");
+        //const user = localStorage.getItem("user");
         const ticketId = parseInt(localStorage.getItem("ticketId"));
         this.setState({id:parseInt(ticketId)})
         this.setState({user: email})

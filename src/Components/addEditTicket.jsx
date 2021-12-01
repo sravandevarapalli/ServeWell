@@ -30,14 +30,22 @@ class AddorEditTicket extends React.Component {
  
         //const isLoggedIn = localStorage.getItem("IsLoggedIn");
         const email = localStorage.getItem("email");
-        //const role = localStorage.getItem("role");
+        const role = localStorage.getItem("role");
         //const user = localStorage.getItem("user");
         const ticketId = parseInt(localStorage.getItem("ticketId"));
         this.setState({id:parseInt(ticketId)})
         this.setState({user: email})
         if(ticketId >0  )
         {
-        fetch( 'https://mt02n1vtk0.execute-api.us-east-2.amazonaws.com/ServeWell/ticket?id='+ticketId+"&email="+email, {
+            let url ="";
+           if(role==="Admin")
+           {
+            url = 'https://mt02n1vtk0.execute-api.us-east-2.amazonaws.com/ServeWell/ticket?id='+ticketId
+           }
+           else{
+               url = 'https://mt02n1vtk0.execute-api.us-east-2.amazonaws.com/ServeWell/ticket?id='+ticketId+"&email="+email
+           }
+        fetch( url, {
             method: 'GET',
            
         } )

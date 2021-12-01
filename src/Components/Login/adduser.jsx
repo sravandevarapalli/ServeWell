@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 class AddUser extends React.Component {
     state={
@@ -6,14 +7,14 @@ class AddUser extends React.Component {
         Name:"",
         Email:"",
         Password:"",
-        Role:""
+        Role:"User"
        
     }
 
     handleChange =(e)=>{
         
         const {name, value} = e.target 
-        this.setState({[name]:value});
+        this.setState({[name]:value}); 
 
     }
 
@@ -33,9 +34,11 @@ class AddUser extends React.Component {
         };
         fetch('https://mt02n1vtk0.execute-api.us-east-2.amazonaws.com/ServeWell/user', requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => 
+                {alert(data)
+                console.log(data)});
         
-        event.preventDefault(); 
+    
     
     }
 
@@ -43,8 +46,8 @@ class AddUser extends React.Component {
     render() { 
         return <div className="login-wrapper">
         <h1>Welcome to ServeWell</h1>
-        <form onSubmit ={this.handleSubmit}>
-           
+        {/* <form onSubmit ={this.handleSubmit}>
+            */}
            
            <label className="m-2">
            <p>Name</p>
@@ -62,20 +65,21 @@ class AddUser extends React.Component {
            </label>
            <br></br>
            <label className="m-2">
-           <p>Role</p>
+           Role <span />
          
            <select name = "Role"  onChange={this.handleChange}>
                     <option value="Admin" >Admin</option>
-                    <option value="User" >User</option>
+                    <option value="User" selected>User</option>
                     
                 </select>
 
            </label>
            <br></br>
            <div className="m-2">
-           <button type="submit" >Submit</button>
+           <Link className="btn btn-secondary btn-sm m-2 float-end" role="button" to="/login" onClick={this.handleSubmit}> Sign Up </Link> 
+           {/* <button type="submit" >Submit</button> */}
            </div>
-       </form>
+       {/* </form> */}
         </div>;
     }
 }
